@@ -65,7 +65,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('TO DO'),
+        title: const Text('ToDo List'),
         elevation: 5,
         shadowColor: Colors.indigo,
         centerTitle: true,

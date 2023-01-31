@@ -21,44 +21,41 @@ class ToDoList extends StatelessWidget {
       padding: const EdgeInsets.only(
         top: 10,
       ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: .0),
-        child: Slidable(
-          endActionPane: ActionPane(motion: StretchMotion(), children: [
-            SlidableAction(
-              label: 'Remove',
-              backgroundColor: Colors.indigo,
-              onPressed: deleteFunction,
-              icon: Icons.delete_forever_rounded,
-              borderRadius: BorderRadius.circular(12),
-            )
-          ]),
-          child: Card(
-            color: Colors.white,
-            elevation: 15,
-            shadowColor: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12.0),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: Row(
-                children: [
-                  Checkbox(
-                    value: taskCompleted,
-                    onChanged: onChanged,
-                    activeColor: Colors.indigo,
-                  ),
-                  Text(
-                    taskName,
-                    style: TextStyle(
-                        fontSize: 18,
-                        decoration: taskCompleted
-                            ? TextDecoration.lineThrough
-                            : TextDecoration.none),
-                  ),
-                ],
-              ),
+      child: Slidable(
+        endActionPane: ActionPane(motion: const StretchMotion(), children: [
+          SlidableAction(
+            label: 'Remove',
+            backgroundColor: Colors.indigo,
+            onPressed: deleteFunction,
+            icon: Icons.delete_forever_rounded,
+            borderRadius: BorderRadius.circular(6),
+          )
+        ]),
+        child: Card(
+          color: Colors.white,
+          elevation: 5,
+          shadowColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(6.0),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Checkbox(
+                  value: taskCompleted,
+                  onChanged: onChanged,
+                  activeColor: Colors.indigo,
+                ),
+                Text(
+                  taskName,
+                  style: TextStyle(
+                      fontSize: 18,
+                      decoration: taskCompleted
+                          ? TextDecoration.lineThrough
+                          : TextDecoration.none),
+                ),
+              ],
             ),
           ),
         ),
